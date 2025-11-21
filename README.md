@@ -14,7 +14,7 @@ A responsive web application designed to help musicians practice sight-reading a
     * **Accidental Toggle:** Enable or disable sharp and flat notes.
 * **Score Tracking:** Real-time stats including **Correct**, **Wrong**, **Streak**, and **Accuracy** percentage.
 * **Visual Feedback:** Staff flashes green on correct input, red on incorrect input.
-* **Remote Host and Client Modes**: App is hosted centrally, but MIDI connectivity or QWERTY input is all handled in remote browsers from "host" mode. A Host uses MIDI connection (bluetooth or USB connected via "host" browser) or QWERTY keyboard. Client mode allows for remote viewing of session data on an additional display.
+* **Remote Host and Client Modes**: App is hosted centrally, but MIDI connectivity or QWERTY input is all handled in remote browser(s). A "host" browser facilitates MIDI connection or QWERTY keyboard. "Client" browser mode allows for remote viewing of session data on an additional display. Browser defaults to "client" if there is already a "host" browser connected.
 ---
 
 ## 🚀 Setup and Installation
