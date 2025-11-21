@@ -85,4 +85,6 @@ Use the controls above the staff to customize the session:
 * **Sharps/Flats:** Toggle accidentals on or off.
 * **Range:** Adjust the slider to widen or narrow the octave range of notes displayed.
 
+![Web View](images/demo.mov)
+
 ![Web View](images/host.png)
