@@ -6,7 +6,7 @@ A responsive web application designed to help musicians practice sight-reading a
 
 ## ✨ Features
 
-* **MIDI Input:** Connect a MIDI controller (keyboard, pad) for direct note input. This application run in the browser in a Host or Client mode. A Host uses MIDI connection (bluetooth or USB connected via "host" browser) or QWERTY keyboard. Client mode allows for remote viewing of session data on an additional display.
+* **MIDI Input:** Connect a MIDI controller (keyboard, pad) for direct note input. 
 * **Keyboard Fallback:** Use designated computer keys (A-K) as a virtual octave when no MIDI device is detected.
 * **Customizable Training:**
     * **Clef Selection:** Practice Treble, Bass, or both.
@@ -14,8 +14,7 @@ A responsive web application designed to help musicians practice sight-reading a
     * **Accidental Toggle:** Enable or disable sharp and flat notes.
 * **Score Tracking:** Real-time stats including **Correct**, **Wrong**, **Streak**, and **Accuracy** percentage.
 * **Visual Feedback:** Staff flashes green on correct input, red on incorrect input.
-* **Cross-Platform Screen Wake Lock:** Ensures the display stays active during long practice sessions, supporting both the standard **Wake Lock API** (Chrome/Android) and a **silent video workaround** (iOS/Safari/Chrome on iOS).
-
+* **Remote Host and Client Modes**: App is hosted centrally, but MIDI connectivity or QWERTY input is all handled in remote browsers from "host" mode. A Host uses MIDI connection (bluetooth or USB connected via "host" browser) or QWERTY keyboard. Client mode allows for remote viewing of session data on an additional display.
 ---
 
 ## 🚀 Setup and Installation
@@ -35,7 +34,9 @@ A responsive web application designed to help musicians practice sight-reading a
 
 ### Docker Deployment
 
-A `Dockerfile` is included for easy containerization using Nginx.
+A `Dockerfile` is included for easy containerization. You can also use the pre-built image in the repo and skip to step 2.
+
+`docker pull ghcr.io/aneisch/piano-note-trainer:main`
 
 1.  **Build the Docker Image:**
     ```bash
