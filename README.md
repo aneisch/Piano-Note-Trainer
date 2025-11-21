@@ -34,9 +34,8 @@ A responsive web application designed to help musicians practice sight-reading a
 
 ### Docker Deployment
 
-A `Dockerfile` is included for easy containerization. You can also use the pre-built image in the repo and skip to step 2.
+A `Dockerfile` is included for easy containerization.
 
-`docker pull ghcr.io/aneisch/piano-note-trainer:main`
 
 1.  **Build the Docker Image:**
     ```bash
@@ -47,6 +46,17 @@ A `Dockerfile` is included for easy containerization. You can also use the pre-b
     docker run -d -p 80:80 piano-trainer
     ```
 3.  Access the application at `http://localhost`.
+
+### Docker-compose
+
+```
+piano-note-trainer:
+    container_name: piano-note-trainer
+    image: ghcr.io/aneisch/piano-note-trainer:main
+    restart: unless-stopped
+    volumes:
+        - /etc/localtime:/etc/localtime:ro  # Time sync
+```
 
 ---
 
