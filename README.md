@@ -11,7 +11,7 @@ A responsive web application designed to help musicians practice sight-reading a
 * **Customizable Training:**
     * **Clef Selection:** Practice Treble, Bass, or both.
     * **Range Control:** Adjust the octave range of notes presented.
-    * **Accidental Toggle:** Enable or disable sharp ($\text{\#}$) and flat ($\text{b}$) notes.
+    * **Accidental Toggle:** Enable or disable sharp and flat notes.
 * **Score Tracking:** Real-time stats including **Correct**, **Wrong**, **Streak**, and **Accuracy** percentage.
 * **Visual Feedback:** Staff flashes green on correct input, red on incorrect input.
 * **Cross-Platform Screen Wake Lock:** Ensures the display stays active during long practice sessions, supporting both the standard **Wake Lock API** (Chrome/Android) and a **silent video workaround** (iOS/Safari/Chrome on iOS).
@@ -27,12 +27,11 @@ A responsive web application designed to help musicians practice sight-reading a
     git clone [your-repo-link]
     cd piano-note-trainer
     ```
-2.  **Add Video File:** Place your silent video file as **`keep-alive.mp4`** in the root directory.
-3.  **Run Locally:** Using a local server is recommended for better compatibility (e.g., using Python's simple HTTP server):
+2.  **Run Locally:** Using a local server is recommended for better compatibility (e.g., using Python's simple HTTP server):
     ```bash
     python3 -m http.server 8000
     ```
-4.  Open your browser and navigate to `http://localhost:8000`.
+3.  Open your browser and navigate to `http://localhost:8000`.
 
 ### Docker Deployment
 
