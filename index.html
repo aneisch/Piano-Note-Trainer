@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piano Note Trainer</title>
+  <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+  <script src="app.js" defer></script>
+  <style>
+    body {
+      background-color: #2a2a44;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-weight: 600;
+      margin: 20px 0 10px 0;
+    }
+    
+    /* Styles for the mode and settings display */
+    #mode-display {
+      font-size: 1.1em;
+      margin-bottom: 5px;
+      font-weight: 600;
+      min-height: 1.5em; /* Reserve space to prevent layout jump */
+    }
+    #settings-display {
+        font-size: 0.9em;
+        font-weight: 400;
+        color: #bbb;
+        margin-bottom: 15px;
+        min-height: 1.2em;
+    }
+
+    #toggleFullscreenButton {
+    background-color: #003b7a;
+    color: white;
+    }
+
+    #controls {
+      margin: 0 auto 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.9em;
+    }
+    #controls select, #controls input[type=checkbox], #controls input[type=range] {
+      margin-left: 6px;
+    }
+    #rangeDisplay {
+      font-weight: 500;
+    }
+
+    #scoreboard {
+      margin: 10px auto;
+      font-size: 1.2em;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    #staff {
+      margin: 40px auto;
+      width: 400px;
+      height: 200px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      transition: background 0.3s;
+      transform: scale(2.0); /* Force 2x visual zoom on all content */
+      margin-top: 120px; /* Push following content down to compensate for zoom */
+      margin-bottom: 200px; /* Push following content down to compensate for zoom */
+    }
+
+    .flash-correct {
+      animation: flashGreen 0.4s ease;
+    }
+    .flash-wrong {
+      animation: flashRed 0.4s ease;
+    }
+    @keyframes flashGreen {
+      from { background-color: #fff; }
+      to { background-color: #c8f7c5; }
+    }
+    @keyframes flashRed {
+      from { background-color: #fff; }
+      to { background-color: #f7c5c5; }
+    }
+
+    #fallback {
+      margin-top: 20px;
+      color: #bbb;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <br>
+  <!-- <div id="mode-display"></div> -->
+  <button id="toggleFullscreenButton">Toggle Fullscreen</button><br><br>
+  <div id="settings-display"></div>
+  <div id="controls">
+    <label>Clef:
+      <select id="clefMode">
+        <option value="both">Both</option>
+        <option value="treble">Treble</option>
+        <option value="bass">Bass</option>
+      </select>
+    </label>
+    <label>Sharps/Flats:
+      <input type="checkbox" id="useAccidentals">
+    </label>
+    <label>Range:
+      <input type="range" id="maxRange" min="0" max="4" value="2">
+      <span id="rangeDisplay">2</span>
+    </label>
+  </div>
+
+  <div id="scoreboard">
+    <div>✅ Correct: <span id="correct">0</span></div>
+    <div>❌ Wrong: <span id="wrong">0</span></div>
+    <div>🔥 Streak: <span id="streak">0</span></div>
+    <div>📊 Accuracy: <span id="accuracy">0%</span></div>
+  </div>
+
+  <div id="staff"></div>
+  <!-- <div id="fallback" style="display:none;">🎹 Keyboard mode: press A–K to guess notes</div> -->
+</body>
+</html>
